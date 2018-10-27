@@ -1,14 +1,14 @@
 pipeline
 {
 	agent any
-	triggers{
+	/*triggers{
 		pollSCM('* * * * *')
-	}
+	}*/
 	stages{
 		stage('Build')
 		{
 			steps{
-				sh "/opt/maven/bin/mvn clean package"
+				//sh "/opt/maven/bin/mvn clean package"
 				sh "sudo docker build . -t tomcatwebapp:${env.BUILD_ID}"
 			}
 			post{

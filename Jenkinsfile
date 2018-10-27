@@ -5,10 +5,6 @@ pipeline
 		stage('Build')
 		{
 			steps{
-				echo "Hello World"
-		}
-			/*
-			steps{
 				sh '/opt/maven/bin/mvn clean package'
 			}
 			post{
@@ -17,8 +13,7 @@ pipeline
 					archiveArtifacts artifacts: '**starget*.war'
 				}
 			}
-		}*/
-
+		}
 	}
 	}
 }

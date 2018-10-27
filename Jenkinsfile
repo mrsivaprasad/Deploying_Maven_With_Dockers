@@ -28,14 +28,14 @@ pipeline
 				stage('Deploy to staging')
 				{
 					steps{
-						sh "scp -i 	/home/ec2-user/Tomcat_Keys/Tomcat-servers.pem **/target/*.war ec2-user@${params.tomcat_stage}:/home/ec2-user/apache-tomcat-8.5.34/webapps"
+						sh "sudo scp -i 	/home/ec2-user/Tomcat_Keys/Tomcat-servers.pem **/target/*.war ec2-user@${params.tomcat_stage}:/home/ec2-user/apache-tomcat-8.5.34/webapps"
 					}
 				}
 
 				stage('Deploy to Production')
 				{
 					steps{
-						sh "scp -i 	/home/ec2-user/Tomcat_Keys/Tomcat-servers.pem **/target/*.war ec2-user@${params.tomcat_prod}:/home/ec2-user/apache-tomcat-8.5.34/webapps"
+						sh "sudo scp -i 	/home/ec2-user/Tomcat_Keys/Tomcat-servers.pem **/target/*.war ec2-user@${params.tomcat_prod}:/home/ec2-user/apache-tomcat-8.5.34/webapps"
 					}
 				}
 

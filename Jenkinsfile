@@ -38,7 +38,7 @@ pipeline
 					steps{
 						sh "sudo su - root"
 						sh "sudo /usr/bin/scp  -o 'StrictHostKeyChecking no' -i /home/ec2-user/Tomcat_Keys/Tomcat-servers.pem /var/lib/jenkins/workspace/Maven_Project_FullyAutomatedPipleline/**/target/*.war ec2-user@${params.tomcat_prod}:/home/ec2-user/apache-tomcat-8.5.34/webapps/"
-					}s
+					}
 				}
 
 			}

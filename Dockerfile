@@ -2,7 +2,7 @@ FROM tomcat:8.0
 
 CMD ["mkdir","/usr/local/tomcat/webapps/"]
 
-COPY /var/lib/jenkins/workspace/AutomatedDeploymentwithDOCKER/webapp/target/webapp.war /usr/local/tomcat/webapps/
+COPY ./webapp/target/*.war /usr/local/tomcat/webapps/
 
 EXPOSE 8080
 

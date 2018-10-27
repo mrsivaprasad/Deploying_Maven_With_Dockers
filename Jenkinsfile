@@ -9,7 +9,8 @@ pipeline
 		{
 			steps{
 				//sh "/opt/maven/bin/mvn clean package"
-				sh "sudo docker build . -t tomcatwebapp:${env.BUILD_ID}"
+				sh "sudo usermod -a -G docker $USER"
+				sh "/usr/bin/docker build . -t tomcatwebapp:${env.BUILD_ID}"
 			}
 			post{
 				success{

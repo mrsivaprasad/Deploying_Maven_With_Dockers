@@ -9,7 +9,7 @@ pipeline
 		pollSCM('* * * * *')
 	}
 	stages{
-		stage('Build')
+/*		stage('Build')
 		{
 			steps{
 				sh '/opt/maven/bin/mvn clean package'
@@ -21,14 +21,14 @@ pipeline
 				}
 			}
 		}
-
+*/
 		stage('Deployments')
 		{
 			parallel{
 				stage('Deploy to staging')
 				{
 					steps{
-						sh "scp  -o 'StrictHostKeyChecking no' -i /home/ec2-user/Tomcat_Keys/Tomcat-servers.pem /var/lib/jenkins/workspace/Maven_Project_FullyAutomatedPipleline/**/target/*.war ec2-user@${params.tomcat_stage}:/home/ec2-user/apache-tomcat-8.5.34/webapps/"
+						sh "scp -o 'StrictHostKeyChecking no' -i /home/ec2-user/Tomcat_Keys/Tomcat-servers.pem /var/lib/jenkins/workspace/Maven_Project_FullyAutomatedPipleline/**/target/*.war ec2-user@${params.tomcat_stage}:/home/ec2-user/apache-tomcat-8.5.34/webapps/"
 					}
 				}
 

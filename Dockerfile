@@ -1,5 +1,7 @@
 FROM tomcat:8.0
 
+RUN mkdir /usr/local/tomcat/webapps/
+
 ADD /var/lib/jenkins/workspace/AutomatedDeploymentwithDOCKER/webapp/target/*.war /usr/local/tomcat/webapps/
 
 EXPOSE 8080

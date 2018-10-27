@@ -4,7 +4,11 @@ pipeline
 	stages{
 		stage('Build')
 		{
-			/*steps{
+			steps{
+				echo "Hello World"
+		}
+			/*
+			steps{
 				sh '/opt/maven/bin/mvn clean package'
 			}
 			post{

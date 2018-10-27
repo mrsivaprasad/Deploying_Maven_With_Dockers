@@ -8,8 +8,8 @@ EXPOSE 8080
 
 USER root
 
-RUN usermod -aG docker ec2-user \
-&&  chmod a+rwx /var/run/docker.sock \
-&& gpasswd -a ec2-user docker
+#RUN usermod -aG docker ec2-user \
+#&&  chmod a+rwx /var/run/docker.sock \
+#&& gpasswd -a ec2-user docker
 
 CMD ["catalina.sh","run"]
